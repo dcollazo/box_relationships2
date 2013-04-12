@@ -1,0 +1,11 @@
+<h1>Ingredients</h1>
+
+<%= will_paginate %>
+
+<ul class="ingredients">
+  <%= render @ingredient_categories %>
+</ul>
+
+<%= will_paginate %>
+
+<%= link_to 'Create New Ingredient', newingredient_path, class: "btn btn-large btn-primary" %>

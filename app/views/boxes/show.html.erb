@@ -1,0 +1,28 @@
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= @box.name %>
+      </h1>
+    </section>
+    
+    <h3>Contents:</h3>
+    <ul class="ingredients">
+      <%= render partial: 'boxes/ingredient_category', collection: @ingredient_categories %>
+    </ul>
+    
+    <h3>Available Ingredients</h3>
+    <ul class="ingredient_list">
+      <%= render @ingredient_list %>
+    </ul>
+    
+    <%= form_for(@box) do |box_form| %>
+      <%= box_form.fields_for :ingredient_categories do |ingredient_fields| %>
+        Ingredient: <%= ingredient_fields.text_field :name.capitalize %>
+        Quantity: <%= ingredient_fields.text_field :quantity %>
+        <%= ingredient_fields.submit "Add ingredient", class: "btn btn-large btn-primary" %>
+      <% end %>
+    <% end %>
+    
+  </aside>
+</div>

@@ -1,0 +1,11 @@
+<h1>Boxes</h1>
+
+<%= will_paginate %>
+
+<ul class="boxes">
+  <%= render @boxes %>
+</ul>
+
+<%= will_paginate %>
+
+<%= link_to 'Create New Box', newbox_path, class: "btn btn-large btn-primary" %>
